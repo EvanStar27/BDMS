@@ -1,0 +1,372 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/*********************************** HEADER ************************************/
+
+header {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    background-color: rgba(255, 255, 255, .8);
+    top: 0;
+    z-index: 5;
+}
+
+#logo {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 25px 0 0 30px;
+}
+
+#logo:hover {
+    animation: logo-anim 2s ease-in-out;
+}
+
+@keyframes logo-anim {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    75% {
+        transform: rotateZ(360deg);
+    }
+
+    80% {
+        transform: translateY(-10px);
+    }
+
+    95% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+nav {
+    float: right;
+    height: 100px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+nav ul li {
+    float: left;
+    margin: 35px 30px 0 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    letter-spacing: .2em;
+    padding-bottom: 20px;
+    border-bottom: 2px solid transparent;
+    color: #444;
+    transition: all .3s ease-in;
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid rgb(0, 223, 192);
+}
+
+nav ul li button {
+    width: 120px;
+    padding: 10px;
+    margin-top: -10px;
+    border: none;
+    outline: none;
+    background: linear-gradient(45deg, rgb(0, 223, 192), rgb(0, 156, 134));
+    color: white;
+    cursor: pointer;
+    border-radius: 25px;
+    letter-spacing: .2em;
+    transition: all .3s ease-in;
+}
+
+nav ul li button:hover {
+    animation: button-hover .5s ease-in-out;
+}
+
+#menu {
+    display: none;
+}
+
+/******************************** MAIN CONTAINER ********************************/
+
+.main-container {
+    margin-top: 100px;
+    max-width: 100vw;
+    max-height: 100%;
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+.main-container section {
+    flex: 1;
+    flex-basis: 50%;
+}
+
+.left {
+    padding: 50px;
+}
+
+.left h1:nth-of-type(1) {
+    margin: 10px 0;
+    color: #444;
+}
+
+.left h1:nth-of-type(2) {
+    margin: 10px 0;
+    color: rgb(0, 156, 134);
+    font-size: 40px;
+}
+
+.left button {
+    width: 120px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: linear-gradient(45deg, rgb(0, 223, 192), rgb(0, 156, 134));
+    color: white;
+    cursor: pointer;
+    border-radius: 25px;
+    letter-spacing: .2em;
+    transition: all .3s ease-in;
+}
+
+.left button:hover {
+    animation: button-hover .5s ease-in-out;
+}
+
+.right {
+    text-align: center;
+}
+
+.right img {
+    width: 500px;
+    height: 500px;
+    
+}
+
+@keyframes button-hover {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    75% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/******************************** MODAL CONTAINER ********************************/
+
+.modal-container {
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    display: none;
+    z-index: 6;
+}
+
+.login-modal,
+.signup-modal {
+    width: 300px;
+    height: 350px;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    margin: auto;
+    background: white;
+    display: none;
+    padding: 20px 50px;
+}
+
+@keyframes modal-form-anim {
+    0% {
+        transform: scale(0);
+    }
+
+    70% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-close {
+    font-size: 40px;
+    font-weight: bold;
+    float: right;
+    color: #444;
+    cursor: pointer;
+}
+
+.btn-close:hover {
+    color: rgb(0, 156, 134);
+}
+
+.modal-container h2 {
+    margin: 15px 0 30px 0;
+    color: rgb(0, 156, 134);
+}
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid transparent;
+    outline: none;
+    margin-bottom: 10px;
+    background-color: #eee;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+    border: 1px solid rgb(0, 156, 134);
+}
+
+input[type=submit] {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    color: white;
+    background: linear-gradient(45deg, rgb(0, 223, 192), rgb(0, 156, 134));
+    cursor: pointer;
+    letter-spacing: .2em;
+}
+
+input[type=submit]:hover {
+    animation: button-hover .5s ease-in-out;
+}
+
+.links {
+    text-decoration: none;
+    color: rgb(0, 156, 134);
+}
+
+.links:hover {
+    color: rgb(0, 223, 192);
+}
+
+/******************************** STATUS CONTAINER ********************************/
+
+.status-container {
+    width: 300px;
+    position: fixed;
+    left: 0; right: 0; bottom: 25px;
+    background: rgba(0, 0, 0, .8);
+    margin: 0 auto;
+    padding: 10px;
+    color: white;
+    display: none;
+    pointer-events: none;
+    cursor: default;
+    font-size: 12px;
+}
+
+@keyframes disp-status {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/******************************** MEDIA QUERIES ********************************/
+@media screen and (max-width: 999px) {
+    #nav-links {
+        display: none;
+        margin: 100px 0 0 0;
+        width: 200px;
+        height: 170px;
+        padding: 0;
+        text-align: center;
+        background-color: whitesmoke;
+    }
+
+    nav ul {
+        padding: 0;
+    }
+
+    nav ul li {
+        float: none;
+        margin: 0;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    nav ul li a {
+        padding-bottom: 5px;
+    }
+
+    nav ul li button {
+        margin-top: 5px;
+    }
+
+    #menu {
+        display: block;
+    }
+
+    #menu::after {
+        content: '\2630';
+        position: fixed;
+        right: 0;
+        margin: 25px 30px 0 0;
+        font-size: 30px;
+        font-weight: bolder;
+        color: #444;
+        cursor: pointer;
+    }
+    
+    #menu:hover::after {
+        color: rgb(0, 156, 134);
+    }
+
+    .left {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .right img {
+        width: 320px;
+        height: 320px;
+    }
+}

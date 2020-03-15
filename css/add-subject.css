@@ -1,0 +1,27 @@
+.welcome-container {
+    width: 100%;
+    margin-top: 100px;
+}
+
+.welcome-container h1 {
+    text-align: center;
+    color: #444;
+}
+
+.welcome-container p {
+    text-align: center;
+}
+
+.form-container {
+    width: 300px;
+    padding: 20px;
+    position: relative;
+    left: 0;
+    margin: auto;
+}
+
+.form-container select {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+}
