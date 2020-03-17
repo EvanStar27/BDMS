@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 15, 2020 at 03:32 PM
+-- Generation Time: Mar 17, 2020 at 02:09 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -107,6 +107,27 @@ INSERT INTO `students` (`id`, `username`, `password`, `full_name`, `rollno`, `ph
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `students_performance`
+--
+
+DROP TABLE IF EXISTS `students_performance`;
+CREATE TABLE IF NOT EXISTS `students_performance` (
+  `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `student_id` int(11) UNSIGNED NOT NULL,
+  `subject_id` int(11) UNSIGNED NOT NULL,
+  `test1` varchar(3) DEFAULT NULL,
+  `test2` varchar(3) DEFAULT NULL,
+  `test3` varchar(3) DEFAULT NULL,
+  `assignment` varchar(3) DEFAULT NULL,
+  `subject_ia` int(3) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `f10` (`student_id`),
+  KEY `f11` (`subject_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `subjects`
 --
 
@@ -182,6 +203,13 @@ ALTER TABLE `attendance_records`
 ALTER TABLE `attendance_sheet`
   ADD CONSTRAINT `f4` FOREIGN KEY (`teachers_id`) REFERENCES `teachers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `f5` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `students_performance`
+--
+ALTER TABLE `students_performance`
+  ADD CONSTRAINT `f10` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `f11` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `teaches`

@@ -111,15 +111,15 @@ if (isset($_SESSION["errors"])) {
                             // echo "<td>" . $row["id"] . "</td>";
                             echo "<td>" . $row["username"] . "</td>";
                             echo "<td>" . $row["full_name"] . "</td>";
-                            echo "<td>" . $row["gender"] . "</td>";
-                            echo "<td>" . $row["rollno"] . "</td>";
+                            echo "<td style='text-align: center;'>" . $row["gender"] . "</td>";
+                            echo "<td style='text-align: center;'>" . $row["rollno"] . "</td>";
 
                             if (!empty($row["phone"]))
-                                echo "<td>" . $row["phone"] . "</td>";
+                                echo "<td style='text-align: center;'>" . $row["phone"] . "</td>";
                             else
-                                echo "<td>NULL</td>";
+                                echo "<td style='text-align: center;'>NULL</td>";
 
-                            echo "<td>";
+                            echo "<td style='text-align: center;'>";
                                 echo "<a class='update-links' title='Edit' href='edit-student.php?sid=" . $row["id"] . "'><img src='img/icons/edit.png' alt='Edit'></a>";
                                 echo "<a class='update-links btn-del' title='Delete' href='students-info.php?sid=" . $row["id"] . "&semester=$semester&btn-view=View'><img src='img/icons/trash.png' alt='Delete'></a>";
                             echo "</td>";

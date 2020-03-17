@@ -67,16 +67,10 @@ if (isset($_SESSION["teachers-login-status"]) and $_SESSION["teachers-login-stat
             <p class="fun-disc">Click here to view or update students information.</p>
         </a>
 
-        <a href="#">
-            <img src="img/icons/human.png" alt="">
-            <p class="fun-name">Add Students Performance</p>
-            <p class="fun-disc">Click here to take add students performance.</p>
-        </a>
-
-        <a href="#">
+        <a href="students-performance.php">
             <img src="img/icons/performance.png" alt="">
-            <p class="fun-name">View Students Performance</p>
-            <p class="fun-disc">Click here to take view students performance.</p>
+            <p class="fun-name">Students Performance</p>
+            <p class="fun-disc">Click here to view, add students performance.</p>
         </a>
 
         <a href="attendance-manager.php">
